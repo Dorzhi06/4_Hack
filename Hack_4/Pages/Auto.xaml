@@ -9,6 +9,10 @@
       Title="Auto">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Button x:Name="nextBtn" Content="Далее" 
+                    FontSize="25" Click="nextBtn_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

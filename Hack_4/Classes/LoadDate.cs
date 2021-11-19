@@ -11,19 +11,19 @@ namespace Hack_4.Classes
     class LoadDate
     {
         //Массив данных
-        private static List<TimerClass> allData = new List<TimerClass>();
+        private static List<MainData> allData = new List<MainData>();
 
         /// <summary>
         /// Функция конвертации excel файлов в массив данных List
         /// </summary>
         /// <param name="doclink">Путь к excel файлу</param>
         /// <returns></returns>
-        public static List<TimerClass> GetExcelData(string doclink)
+        public static List<MainData> GetExcelData(string doclink)
         {
             var doc = new ExcelPackage(doclink).Workbook.Worksheets[0];
             int cellnum = 7;
             int start = 1;
-            int id;
+            int id=1;
             string? Date, Who, Station, Object,
                 TimeStart, DateEnd, TimeEnd, Ind,
                 Cound, Service, Why, WhoDoing,
@@ -31,7 +31,6 @@ namespace Hack_4.Classes
             do
             {
                 if (Convert(doc.Cells["A" + cellnum].Value) == null) break;
-                id = start;
                 Date = Convert(doc.Cells["B" + cellnum].Value);
                 Who = Convert(doc.Cells["C" + cellnum].Value);
                 Station = Convert(doc.Cells["D" + cellnum].Value);
@@ -83,7 +82,7 @@ namespace Hack_4.Classes
                     WhoTimeEnd = null;
                 }
 
-                TimerClass tc = new TimerClass();
+                MainData tc = new MainData();
                 tc.id = id;
                 tc.Date = Date;
                 tc.Who = Who;
@@ -93,7 +92,7 @@ namespace Hack_4.Classes
                 tc.DateEnd = DateEnd;
                 tc.TimeEnd = TimeEnd;
                 tc.Ind = Ind;
-                tc.Cound = Int32.Parse(Cound);
+                tc.Count = Int32.Parse(Cound);
                 tc.Service = Service;
                 tc.Why = Why;
                 tc.WhoDoing = WhoDoing;
@@ -102,7 +101,7 @@ namespace Hack_4.Classes
                 allData.Add(tc);
                 cellnum++;
                 start++;
-                if (start == 1000) break;
+                id++;
 
             } while (Date != null);
             return allData;

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище HackDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CauseErrors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
+    <Property Name="lvl" Type="int" />
+    <Property Name="min" Type="int" />
+    <Property Name="max" Type="int" />
+  </EntityType>
+  <EntityType Name="MainData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="varchar(max)" />
+    <Property Name="Who" Type="varchar(max)" />
+    <Property Name="Station" Type="varchar(max)" />
+    <Property Name="Object" Type="varchar(max)" />
+    <Property Name="TimeStart" Type="varchar(max)" />
+    <Property Name="DateEnd" Type="varchar(max)" />
+    <Property Name="TimeEnd" Type="varchar(max)" />
+    <Property Name="Ind" Type="varchar(max)" />
+    <Property Name="Count" Type="int" />
+    <Property Name="Service" Type="varchar(max)" />
+    <Property Name="Why" Type="varchar(max)" />
+    <Property Name="WhoDoing" Type="varchar(max)" />
+    <Property Name="WhoDateEnd" Type="varchar(max)" />
+    <Property Name="WhoTimeEnd" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище HackDBModelContainer">
+    <EntitySet Name="CauseErrors" EntityType="Self.CauseErrors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainData" EntityType="Self.MainData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Station" EntityType="Self.Station" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

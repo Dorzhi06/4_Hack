@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище HackDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CauseErrors">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar(max)" Nullable="false" />
+          <Property Name="lvl" Type="int" />
+          <Property Name="min" Type="int" />
+          <Property Name="max" Type="int" />
+        </EntityType>
+        <EntityType Name="MainData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="Who" Type="varchar(max)" />
+          <Property Name="Station" Type="varchar(max)" />
+          <Property Name="Object" Type="varchar(max)" />
+          <Property Name="TimeStart" Type="varchar(max)" />
+          <Property Name="DateEnd" Type="varchar(max)" />
+          <Property Name="TimeEnd" Type="varchar(max)" />
+          <Property Name="Ind" Type="varchar(max)" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Service" Type="varchar(max)" />
+          <Property Name="Why" Type="varchar(max)" />
+          <Property Name="WhoDoing" Type="varchar(max)" />
+          <Property Name="WhoDateEnd" Type="varchar(max)" />
+          <Property Name="WhoTimeEnd" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Station">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище HackDBModelContainer">
+          <EntitySet Name="CauseErrors" EntityType="Self.CauseErrors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainData" EntityType="Self.MainData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Station" EntityType="Self.Station" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HackDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CauseErrors">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lvl" Type="Int32" />
+          <Property Name="min" Type="Int32" />
+          <Property Name="max" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MainData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Who" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Station" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Object" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TimeStart" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DateEnd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TimeEnd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ind" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="Service" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Why" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WhoDoing" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WhoDateEnd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WhoTimeEnd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Station">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="HackEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CauseErrors" EntityType="Self.CauseErrors" />
+          <EntitySet Name="MainData" EntityType="Self.MainData" />
+          <EntitySet Name="Station" EntityType="Self.Station" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище HackDBModelContainer" CdmEntityContainer="HackEntities">
+          <EntitySetMapping Name="CauseErrors">
+            <EntityTypeMapping TypeName="HackDBModel.CauseErrors">
+              <MappingFragment StoreEntitySet="CauseErrors">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lvl" ColumnName="lvl" />
+                <ScalarProperty Name="min" ColumnName="min" />
+                <ScalarProperty Name="max" ColumnName="max" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainData">
+            <EntityTypeMapping TypeName="HackDBModel.MainData">
+              <MappingFragment StoreEntitySet="MainData">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Who" ColumnName="Who" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="Object" ColumnName="Object" />
+                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+                <ScalarProperty Name="Ind" ColumnName="Ind" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Service" ColumnName="Service" />
+                <ScalarProperty Name="Why" ColumnName="Why" />
+                <ScalarProperty Name="WhoDoing" ColumnName="WhoDoing" />
+                <ScalarProperty Name="WhoDateEnd" ColumnName="WhoDateEnd" />
+                <ScalarProperty Name="WhoTimeEnd" ColumnName="WhoTimeEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Station">
+            <EntityTypeMapping TypeName="HackDBModel.Station">
+              <MappingFragment StoreEntitySet="Station">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

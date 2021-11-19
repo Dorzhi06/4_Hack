@@ -24,5 +24,11 @@ namespace Hack_4.Pages
         {
             InitializeComponent();
         }
+
+        private void nextBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = (MainWindow)Window.GetWindow(this);
+            mw.NVG.Navigate(new Pages.MainPage());
+        }
     }
 }

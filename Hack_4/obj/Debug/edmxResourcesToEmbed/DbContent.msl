@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище HackDBModelContainer" CdmEntityContainer="HackEntities">
+    <EntitySetMapping Name="CauseErrors">
+      <EntityTypeMapping TypeName="HackDBModel.CauseErrors">
+        <MappingFragment StoreEntitySet="CauseErrors">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lvl" ColumnName="lvl" />
+          <ScalarProperty Name="min" ColumnName="min" />
+          <ScalarProperty Name="max" ColumnName="max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainData">
+      <EntityTypeMapping TypeName="HackDBModel.MainData">
+        <MappingFragment StoreEntitySet="MainData">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Who" ColumnName="Who" />
+          <ScalarProperty Name="Station" ColumnName="Station" />
+          <ScalarProperty Name="Object" ColumnName="Object" />
+          <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+          <ScalarProperty Name="Ind" ColumnName="Ind" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="Why" ColumnName="Why" />
+          <ScalarProperty Name="WhoDoing" ColumnName="WhoDoing" />
+          <ScalarProperty Name="WhoDateEnd" ColumnName="WhoDateEnd" />
+          <ScalarProperty Name="WhoTimeEnd" ColumnName="WhoTimeEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Station">
+      <EntityTypeMapping TypeName="HackDBModel.Station">
+        <MappingFragment StoreEntitySet="Station">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

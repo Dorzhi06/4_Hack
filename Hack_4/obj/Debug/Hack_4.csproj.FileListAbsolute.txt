@@ -6,7 +6,6 @@ E:\Хакатон\Hack_4\Hack_4\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dl
 E:\Хакатон\Hack_4\Hack_4\bin\Debug\System.ComponentModel.Annotations.dll
 E:\Хакатон\Hack_4\Hack_4\bin\Debug\EPPlus.xml
 E:\Хакатон\Hack_4\Hack_4\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-E:\Хакатон\Hack_4\Hack_4\obj\Debug\Hack_4.csprojAssemblyReference.cache
 E:\Хакатон\Hack_4\Hack_4\obj\Debug\MainWindow.g.cs
 E:\Хакатон\Hack_4\Hack_4\obj\Debug\Pages\Auto.g.cs
 E:\Хакатон\Hack_4\Hack_4\obj\Debug\Pages\MainPage.g.cs
@@ -25,3 +24,12 @@ E:\Хакатон\Hack_4\Hack_4\obj\Debug\Hack_4.csproj.CoreCompileInputs.cache
 E:\Хакатон\Hack_4\Hack_4\obj\Debug\Hack_4.csproj.CopyComplete
 E:\Хакатон\Hack_4\Hack_4\obj\Debug\Hack_4.exe
 E:\Хакатон\Hack_4\Hack_4\obj\Debug\Hack_4.pdb
+E:\Хакатон\Hack_4\Hack_4\bin\Debug\EntityFramework.dll
+E:\Хакатон\Hack_4\Hack_4\bin\Debug\EntityFramework.SqlServer.dll
+E:\Хакатон\Hack_4\Hack_4\bin\Debug\EntityFramework.xml
+E:\Хакатон\Hack_4\Hack_4\bin\Debug\EntityFramework.SqlServer.xml
+E:\Хакатон\Hack_4\Hack_4\bin\Debug\ru\EntityFramework.resources.dll
+E:\Хакатон\Hack_4\Hack_4\obj\Debug\Hack_4_Content.g.cs
+E:\Хакатон\Hack_4\Hack_4\obj\Debug\Hack_4.csprojAssemblyReference.cache
+E:\Хакатон\Hack_4\Hack_4\obj\Debug\Pages\ReadeingPages.g.cs
+E:\Хакатон\Hack_4\Hack_4\obj\Debug\Pages\ReadeingPages.baml

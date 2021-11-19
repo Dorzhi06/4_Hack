@@ -37,6 +37,12 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="EPPlus, Version=5.8.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.5.8.3\lib\net45\EPPlus.dll</HintPath>
     </Reference>
@@ -51,6 +57,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml" />
@@ -71,6 +78,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CauseErrors.cs">
+      <DependentUpon>DbContent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ReadingTable.cs" />
+    <Compile Include="connectDB.cs" />
+    <Compile Include="DbContent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbContent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainData.cs">
+      <DependentUpon>DbContent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReadeingPages.xaml.cs">
+      <DependentUpon>ReadeingPages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Station.cs">
+      <DependentUpon>DbContent.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,8 +105,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\DataProcessing.cs" />
     <Compile Include="Classes\LoadDate.cs" />
-    <Compile Include="Classes\TimerClass.cs" />
+    <Compile Include="DbContent.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbContent.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbContent.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -90,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ReadeingPages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +165,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DbContent.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbContent.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DbContent.edmx.diagram">
+      <DependentUpon>DbContent.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +183,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DbContent.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DbContent.Context.cs</LastGenOutput>
+      <DependentUpon>DbContent.edmx</DependentUpon>
+    </Content>
+    <Content Include="DbContent.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbContent.edmx</DependentUpon>
+      <LastGenOutput>DbContent.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
