@@ -82,6 +82,7 @@
       <DependentUpon>DbContent.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\ReadingTable.cs" />
+    <Compile Include="Classes\UnLoad.cs" />
     <Compile Include="connectDB.cs" />
     <Compile Include="DbContent.cs">
       <AutoGen>True</AutoGen>
