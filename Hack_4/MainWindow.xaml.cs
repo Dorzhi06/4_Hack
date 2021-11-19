@@ -23,6 +23,7 @@ namespace Hack_4
         public MainWindow()
         {
             InitializeComponent();
+            NVG.Navigate(new Pages.MainPage());
         }
     }
 }

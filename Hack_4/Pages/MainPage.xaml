@@ -1,0 +1,55 @@
+﻿<Page x:Class="Hack_4.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hack_4.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid>
+        <StackPanel>
+            <DataGrid Margin="10" x:Name="ourTable"
+                  ItemsSource="{Binding allData}"
+                  Height="360"
+                  AutoGenerateColumns="False" CanUserAddRows="False"
+                  VerticalGridLinesBrush="White" 
+                  HorizontalGridLinesBrush="White">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="idCol" Header="id"
+                                    Binding="{Binding id}"/>
+                    <DataGridTextColumn Binding="{Binding Date}"
+                                    Header="Date"/>
+                    <DataGridTextColumn Binding="{Binding Who}"
+                                    Header="Who"/>
+                    <DataGridTextColumn Binding="{Binding Station}"
+                                    Header="Station"/>
+                    <DataGridTextColumn Binding="{Binding Object}"
+                                    Header="Object"/>
+                    <DataGridTextColumn Binding="{Binding TimeStart}"
+                                    Header="TimeStart"/>
+                    <DataGridTextColumn Binding="{Binding DateEnd}"
+                                    Header="DateEnd"/>
+                    <DataGridTextColumn Binding="{Binding TimeEnd}"
+                                    Header="TimeEnd"/>
+                    <DataGridTextColumn Binding="{Binding Ind}"
+                                    Header="Ind"/>
+                    <DataGridTextColumn Binding="{Binding Count}"
+                                    Header="Count"/>
+                    <DataGridTextColumn Binding="{Binding Why}"
+                                    Header="Why"/>
+                    <DataGridTextColumn Binding="{Binding WhoDoing}"
+                                    Header="WhoDoing"/>
+                    <DataGridTextColumn Binding="{Binding WhoDateEnd}"
+                                    Header="WhoDateEnd"/>
+                    <DataGridTextColumn Binding="{Binding WhoTimeEnd}"
+                                    Header="WhoTimeEnd"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="Next" Content="Далее" FontSize="20"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
