@@ -22,14 +22,28 @@ namespace Hack_4.Pages
     /// </summary>
     public partial class MainPage : Page
     {
+        //Путь к примерному файлу
+        private string file = @"E:\Хакатон\Hack_4\Hack_4\Files\1.xlsx";
+
+        //Массив данных
+        List<TimerClass> allData = null;
         public MainPage()
         {
             InitializeComponent();
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            string file = @"E:\Хакатон\Hack_4\Hack_4\Files\1.xlsx";
-            List<TimerClass> allData = LoadDate.GetExcelData(file);
 
+            allData = LoadDate.GetExcelData(file);
+
+            ourTable.ItemsSource = allData;
+        }
+
+        /// <summary>
+        /// Загрузка данных в DataGrid
+        /// </summary>
+        private void LoadData()
+        {
+            List<TimerClass> allData = LoadDate.GetExcelData(file);
             ourTable.ItemsSource = allData;
         }
     }

@@ -10,7 +10,14 @@ namespace Hack_4.Classes
 {
     class LoadDate
     {
+        //Массив данных
         private static List<TimerClass> allData = new List<TimerClass>();
+
+        /// <summary>
+        /// Функция конвертации excel файлов в массив данных List
+        /// </summary>
+        /// <param name="doclink">Путь к excel файлу</param>
+        /// <returns></returns>
         public static List<TimerClass> GetExcelData(string doclink)
         {
             var doc = new ExcelPackage(doclink).Workbook.Worksheets[0];
